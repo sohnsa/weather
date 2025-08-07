@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 정보 앱</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>날씨 정보</h1>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="도시명을 입력하세요 (예: Seoul, London)" />
+            <button id="searchBtn">검색</button>
+        </div>
+        
+        <div id="loading" class="loading hidden">날씨 정보를 불러오는 중...</div>
+        
+        <div id="weatherContainer" class="weather-container hidden">
+            <div class="current-weather">
+                <div class="weather-header">
+                    <h2 id="cityName"></h2>
+                    <p id="currentDate"></p>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temperature">
+                        <span id="currentTemp"></span>
+                        <img id="weatherIcon" src="" alt="날씨 아이콘" />
+                    </div>
+                    <div class="weather-desc">
+                        <p id="weatherDescription"></p>
+                        <p id="feelsLike"></p>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="label">습도:</span>
+                        <span id="humidity"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">바람:</span>
+                        <span id="windSpeed"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">기압:</span>
+                        <span id="pressure"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">가시거리:</span>
+                        <span id="visibility"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forecast-container">
+                <h3>3일 예보</h3>
+                <div id="forecastList" class="forecast-list"></div>
+            </div>
+        </div>
+        
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
